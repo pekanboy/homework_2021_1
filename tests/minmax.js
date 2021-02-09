@@ -38,9 +38,9 @@ QUnit.module('Тестируем функцию minmax', function () {
 	});
 
 	QUnit.test('minmax правильно обрабатывает ошибочные аргументы', function (assert) {
-		assert.deepEqual(minmax(null), [undefined, undefined]);
-		assert.deepEqual(minmax(undefined), [undefined, undefined]);
-		assert.deepEqual(minmax(false), [undefined, undefined]);
-		assert.deepEqual(minmax({}), [undefined, undefined]);
+		assert.deepEqual(minmax(null), [ undefined, undefined ]);
+		assert.deepEqual(minmax(undefined), [ undefined, undefined ]);
+		assert.deepEqual(minmax(false), [ undefined, undefined ]);
+		assert.deepEqual(minmax({}), [ undefined, undefined ]);
 	});
 });

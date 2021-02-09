@@ -18,12 +18,12 @@
  */
 const minmax = (string) => {
     if (typeof string !== 'string') {
-        return [undefined, undefined];
+        return [ undefined, undefined ];
     }
 
     const numbers = string.split(/\s+/)
                           .map((item) => parseFloat(item))
                           .filter((item) => !isNaN(item));
 
-    return numbers.length ? [Math.min(...numbers), Math.max(...numbers)] : [undefined, undefined];
+    return numbers.length ? [ Math.min(...numbers), Math.max(...numbers) ] : [ undefined, undefined ];
 }
