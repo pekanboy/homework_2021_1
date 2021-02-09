@@ -33,8 +33,14 @@ QUnit.module('Тестируем функцию minmax', function () {
 
 	QUnit.test('minmax игнорирует обычный текст', function (assert) {
 		assert.deepEqual(minmax('1, -5.8 или 10, хотя 34 + -5.3 и 73'), [ -5.8, 73 ]);
-		assert.deepEqual(minmax('12 2da Hell0 -Infinity 3e3'), [ -Infinity, 3e3 ]);
-		assert.deepEqual(minmax('7as789 v9a9f8 as8fa88 asfafs-0-9-8-8'), [ -9, 789 ]);
+		assert.deepEqual(minmax('12 2ip Hell0 -Infinity 3e3'), [ -Infinity, 3e3 ]);
+		assert.deepEqual(minmax('gas 789 code:12 2st -9'), [ -9, 789 ]);
+	});
 
+	QUnit.test('minmax правильно обрабатывает ошибочные аргументы', function (assert) {
+		assert.deepEqual(minmax(null), [undefined, undefined]);
+		assert.deepEqual(minmax(undefined), [undefined, undefined]);
+		assert.deepEqual(minmax(false), [undefined, undefined]);
+		assert.deepEqual(minmax({}), [undefined, undefined]);
 	});
 });
